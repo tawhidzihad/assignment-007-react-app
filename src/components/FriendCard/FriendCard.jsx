@@ -1,18 +1,19 @@
+import { Link } from "react-router";
+
 const FriendCard = ({ friend }) => {
-	const { name, days_since_contact, picture, status, tags } = friend;
+	const { id, name, days_since_contact, picture, status, tags } = friend;
 
 	const statusStyle = {
 		overdue: "bg-red-500 text-white capitalize px-3 py-1 rounded-full",
 		"on-track":
-			"bg-emerald-800 text-white capitalize px-3 py-2 rounded-full",
+			"bg-emerald-800 text-white capitalize px-3 py-1 rounded-full",
 
 		"almost due":
-			"bg-amber-400 text-white capitalize px-3 py-2 rounded-full",
+			"bg-amber-400 text-white capitalize px-3 py-1 rounded-full",
 	};
 
-	console.log(friend);
 	return (
-		<div className="flex justify-center items-center flex-col border py-6 space-y-2 bg-white shadow-md border-zinc-200 rounded-lg">
+		<Link to={`/details/${id}`} className="flex justify-center items-center flex-col border py-6 space-y-2 bg-white shadow-md border-zinc-200 rounded-lg">
 			<div>
 				<img
 					src={picture}
@@ -42,7 +43,7 @@ const FriendCard = ({ friend }) => {
 					{status}
 				</span>
 			</div>
-		</div>
+		</Link>
 	);
 };
 

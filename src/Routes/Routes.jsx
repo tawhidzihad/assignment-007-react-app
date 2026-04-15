@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
 				Component: HomaPage,
 			},
 			{
-				path: "/details",
+				path: "/details/:id",
 				Component: DetailsPage,
 			},
 			{

@@ -6,8 +6,6 @@ import FriendCard from "../FriendCard/FriendCard";
 const Banner = () => {
 	const { friends, loading } = useFriendsData();
 
-	console.log(friends);
-
 	return (
 		<div className="max-w-7xl mx-auto">
 			<div className="flex justify-center items-center flex-col py-9 space-y-6 border-b border-zinc-200 text-center px-2 lg:px-0">
@@ -25,7 +23,9 @@ const Banner = () => {
 
 				<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
 					<div className="py-8 text-center shadow-md border border-zinc-200 rounded-lg bg-white space-y-2">
-						<p className="text-teal-800 font-bold text-3xl">{friends.length}</p>
+						<p className="text-teal-800 font-bold text-3xl">
+							{friends.length}
+						</p>
 						<p className="text-zinc-600">Total Friends</p>
 					</div>
 
