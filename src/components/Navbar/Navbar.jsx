@@ -5,7 +5,7 @@ import NavbarLogo from "../../assets/images/logo.png";
 
 const Navbar = () => {
 	return (
-		<div className="border-b border-zinc-200 sticky top-0 bg-white py-4 px-2 md:px-0">
+		<div className="border-b border-zinc-200 sticky top-0 z-10 bg-white py-4 px-2 md:px-0">
 			<div className="container mx-auto flex justify-between items-center">
 				<div>
 					<img src={NavbarLogo} alt="Navbar Logo" />

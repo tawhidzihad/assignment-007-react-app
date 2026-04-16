@@ -32,7 +32,7 @@ const FriendDetailsCard = ({ clickedFriend }) => {
 			...userActions,
 			{
 				name: name,
-				action: "audio-call",
+				action: "Audio",
 				date: modifiedDate,
 			},
 		]);
@@ -43,7 +43,7 @@ const FriendDetailsCard = ({ clickedFriend }) => {
 			...userActions,
 			{
 				name: name,
-				action: "text",
+				action: "Text",
 				date: modifiedDate,
 			},
 		]);
@@ -54,7 +54,7 @@ const FriendDetailsCard = ({ clickedFriend }) => {
 			...userActions,
 			{
 				name: name,
-				action: "video-call",
+				action: "Video",
 				date: modifiedDate,
 			},
 		]);
