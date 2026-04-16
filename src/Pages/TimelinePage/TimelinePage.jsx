@@ -20,6 +20,17 @@ const TimelinePage = () => {
 		setFiltaredData(newArry);
 	};
 
+	const handleNewestToOld = (ActionType) => {
+		setSortingType(ActionType);
+		if (ActionType === "New To Old") {
+			const newArray = [...filtaredData].reverse();
+			setFiltaredData(newArray);
+		}else{
+			const newArray = [...filtaredData].reverse();
+			setFiltaredData(newArray);
+		}
+	};
+
 	return (
 		<div className="bg-zinc-100 py-15 px-2 lg:px-0">
 			{userActions.length === 0 ? (
@@ -43,7 +54,7 @@ const TimelinePage = () => {
 							role="button"
 							className="btn justify-between btn-wide font-normal bg-white"
 						>
-							{`Filter ${sortingType ? "by " + sortingType : "timeline"}`}
+							{`${sortingType ? "Filtered by " + sortingType : "Filter timeline"}`}
 							<RiArrowDropDownLine className="text-3xl" />
 						</div>
 
@@ -71,6 +82,24 @@ const TimelinePage = () => {
 									className="bg-emerald-100 cursor-pointer text-emerald-400 px-3 py-0.5 rounded-full hover:text-white hover:bg-emerald-600"
 								>
 									Text Message
+								</li>
+
+								<li
+									onClick={() =>
+										handleNewestToOld("New To Old")
+									}
+									className="bg-emerald-100 cursor-pointer text-emerald-400 px-3 py-0.5 rounded-full hover:text-white hover:bg-emerald-600"
+								>
+									New To Old
+								</li>
+
+								<li
+									onClick={() =>
+										handleNewestToOld("Old To New")
+									}
+									className="bg-emerald-100 cursor-pointer text-emerald-400 px-3 py-0.5 rounded-full hover:text-white hover:bg-emerald-600"
+								>
+									Old To New
 								</li>
 							</ul>
 						</div>
