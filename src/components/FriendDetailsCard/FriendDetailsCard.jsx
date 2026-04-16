@@ -1,9 +1,13 @@
 import { useContext } from "react";
+import { BiSolidMessageDetail } from "react-icons/bi";
 import { BsCameraVideo } from "react-icons/bs";
 import { HiOutlineBellSnooze } from "react-icons/hi2";
+import { IoIosVideocam } from "react-icons/io";
+import { IoCall } from "react-icons/io5";
 import { LuMessageSquareMore } from "react-icons/lu";
 import { PiArchiveDuotone, PiPhoneCallBold } from "react-icons/pi";
 import { RiDeleteBinLine } from "react-icons/ri";
+import { toast } from "react-toastify";
 import { UserActionContext } from "../../context/UserActionContext";
 
 const FriendDetailsCard = ({ clickedFriend }) => {
@@ -28,17 +32,24 @@ const FriendDetailsCard = ({ clickedFriend }) => {
 	});
 
 	const handleAudioCallBtn = () => {
+		toast.success(`Call with ${name}`, {
+			icon: <IoCall className="text-2xl" />,
+		});
+
 		setUserActions([
 			...userActions,
 			{
 				name: name,
-				action: "Audio",
+				action: "Call",
 				date: modifiedDate,
 			},
 		]);
 	};
 
 	const handleTextBtn = () => {
+		toast.success(`Text with ${name}`, {
+			icon: <BiSolidMessageDetail className="text-2xl" />,
+		});
 		setUserActions([
 			...userActions,
 			{
@@ -50,6 +61,9 @@ const FriendDetailsCard = ({ clickedFriend }) => {
 	};
 
 	const handleVideoCallBtn = () => {
+		toast.success(`Video with ${name}`, {
+			icon: <IoIosVideocam className="text-2xl" />,
+		});
 		setUserActions([
 			...userActions,
 			{

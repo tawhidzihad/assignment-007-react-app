@@ -8,12 +8,12 @@ import VideoCallLogo from "/video.png";
 
 const TimelinePage = () => {
 	const { userActions } = useContext(UserActionContext);
-	const [sortingType, setSortingType] = useState(null)
+	const [sortingType, setSortingType] = useState(null);
 
 	const [filtaredData, setFiltaredData] = useState(userActions);
 
 	const handelFilteredBtn = (ActionType) => {
-		setSortingType(ActionType)
+		setSortingType(ActionType);
 		const newArry = userActions.filter(
 			(userAction) => userAction.action === ActionType,
 		);
@@ -43,7 +43,7 @@ const TimelinePage = () => {
 							role="button"
 							className="btn justify-between btn-wide font-normal bg-white"
 						>
-							{`Filter ${sortingType ? sortingType : "timeline"}`}
+							{`Filter ${sortingType ? "by " + sortingType : "timeline"}`}
 							<RiArrowDropDownLine className="text-3xl" />
 						</div>
 
@@ -53,7 +53,7 @@ const TimelinePage = () => {
 						>
 							<ul className="py-2 pl-2 pr-10 space-y-2">
 								<li
-									onClick={() => handelFilteredBtn("Audio")}
+									onClick={() => handelFilteredBtn("Call")}
 									className="bg-emerald-100 cursor-pointer text-emerald-400 px-3 py-0.5 rounded-full hover:text-white hover:bg-emerald-600"
 								>
 									Audio Call
@@ -84,7 +84,7 @@ const TimelinePage = () => {
 							>
 								<div>
 									<img
-										src={`${userAction.action === "Video" ? VideoCallLogo : userAction.action === "Audio" ? AudioCallLogo : TextLogo}`}
+										src={`${userAction.action === "Video" ? VideoCallLogo : userAction.action === "Call" ? AudioCallLogo : TextLogo}`}
 										alt=""
 									/>
 								</div>
