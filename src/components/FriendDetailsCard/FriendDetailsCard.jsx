@@ -1,8 +1,14 @@
+import { useContext } from "react";
+import { BsCameraVideo } from "react-icons/bs";
 import { HiOutlineBellSnooze } from "react-icons/hi2";
-import { PiArchiveDuotone } from "react-icons/pi";
+import { LuMessageSquareMore } from "react-icons/lu";
+import { PiArchiveDuotone, PiPhoneCallBold } from "react-icons/pi";
 import { RiDeleteBinLine } from "react-icons/ri";
+import { UserActionContext } from "../../context/UserActionContext";
 
 const FriendDetailsCard = ({ clickedFriend }) => {
+	const { userActions, setUserActions } = useContext(UserActionContext);
+
 	const {
 		name,
 		status,
@@ -15,6 +21,45 @@ const FriendDetailsCard = ({ clickedFriend }) => {
 		days_since_contact,
 	} = clickedFriend;
 
+	const modifiedDate = new Date().toLocaleDateString("en-US", {
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+	});
+
+	const handleAudioCallBtn = () => {
+		setUserActions([
+			...userActions,
+			{
+				name: name,
+				action: "audio-call",
+				date: modifiedDate,
+			},
+		]);
+	};
+
+	const handleTextBtn = () => {
+		setUserActions([
+			...userActions,
+			{
+				name: name,
+				action: "text",
+				date: modifiedDate,
+			},
+		]);
+	};
+
+	const handleVideoCallBtn = () => {
+		setUserActions([
+			...userActions,
+			{
+				name: name,
+				action: "video-call",
+				date: modifiedDate,
+			},
+		]);
+	};
+
 	const statusStyle = {
 		overdue: "bg-red-500 text-white capitalize px-3 py-1 rounded-full",
 		"on-track":
@@ -24,11 +69,8 @@ const FriendDetailsCard = ({ clickedFriend }) => {
 			"bg-amber-400 text-white capitalize px-3 py-1 rounded-full",
 	};
 
-	console.log(clickedFriend);
-
 	return (
 		<div className="grid lg:grid-cols-3 gap-5 py-10 px-3 lg:px-0">
-
 			<div className="flex flex-col justify-center items-center space-y-3">
 				<div className="bg-white w-full flex justify-center items-center flex-col py-5 px-3 space-y-3 border shadow-md border-zinc-200 rounded-lg">
 					<img
@@ -77,9 +119,8 @@ const FriendDetailsCard = ({ clickedFriend }) => {
 			</div>
 
 			<div className="lg:col-span-2 flex flex-col justify-between gap-3 items-center">
-                
-                {/* Div 1 */}
-				<div className="w-full grid grid-cols-3 gap-3">
+				{/* Div 1 */}
+				<div className="w-full flex-1 grid grid-cols-3 gap-3">
 					<div className="flex justify-center items-center flex-col border py-5 bg-white shadow-md border-zinc-200 rounded-lg text-center">
 						<h3 className="text-[30px] font-semibold text-emerald-900">
 							{days_since_contact}
@@ -105,8 +146,8 @@ const FriendDetailsCard = ({ clickedFriend }) => {
 					</div>
 				</div>
 
-                {/* Div 2 */}
-				<div className="w-full border bg-white shadow-md border-zinc-200 rounded-lg space-y-4 p-5">
+				{/* Div 2 */}
+				<div className="w-full flex-1 border bg-white shadow-md border-zinc-200 rounded-lg space-y-6 p-5">
 					<div className="flex justify-between items-center">
 						<span className="text-emerald-800 font-semibold">
 							Relationship Goal
@@ -124,10 +165,44 @@ const FriendDetailsCard = ({ clickedFriend }) => {
 					</div>
 				</div>
 
-                {/* Div 3 */}
-				<div className="w-full border bg-white shadow-md border-zinc-200 rounded-lg p-5">
+				{/* Div 3 */}
+				<div className="w-full flex-1 space-y-4 border bg-white shadow-md border-zinc-200 rounded-lg p-5">
+					<p className="text-xl font-medium text-emerald-900">
+						Quick Check-In
+					</p>
 
-                </div>
+					<div className="grid grid-cols-3 gap-3">
+						<div
+							onClick={handleAudioCallBtn}
+							className="flex justify-center items-center bg-gray-100 py-5 border shadow-md border-zinc-200 rounded-lg hover:bg-gray-300 cursor-pointer"
+						>
+							<button className="flex cursor-pointer flex-col justify-center items-center gap-1">
+								<PiPhoneCallBold />
+								<span>Call</span>
+							</button>
+						</div>
+
+						<div
+							onClick={handleTextBtn}
+							className="flex justify-center items-center bg-gray-100 py-5 border shadow-md border-zinc-200 rounded-lg hover:bg-gray-300 cursor-pointer"
+						>
+							<button className="flex cursor-pointer  flex-col justify-center items-center gap-1">
+								<LuMessageSquareMore />
+								<span>Text</span>
+							</button>
+						</div>
+
+						<div
+							onClick={handleVideoCallBtn}
+							className="flex justify-center items-center bg-gray-100 py-5 border shadow-md border-zinc-200 rounded-lg hover:bg-gray-300 cursor-pointer"
+						>
+							<button className="flex cursor-pointer flex-col justify-center items-center gap-1">
+								<BsCameraVideo />
+								<span>Video</span>
+							</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
