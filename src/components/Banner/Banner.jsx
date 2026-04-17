@@ -6,6 +6,18 @@ import FriendCard from "../FriendCard/FriendCard";
 const Banner = () => {
 	const { friends, loading } = useFriendsData();
 
+	const onTrackLength = friends.filter(
+		(friend) => friend.status === "on-track",
+	).length;
+
+	const overdueLength = friends.filter(
+		(friend) => friend.status === "overdue",
+	).length;
+
+	const interactionThisMonthLength = friends.filter(
+		(friend) => friend.days_since_contact <= 30,
+	).length;
+
 	return (
 		<div className="max-w-7xl mx-auto">
 			<div className="flex justify-center items-center flex-col py-9 space-y-6 border-b border-zinc-200 text-center px-2 lg:px-0">
@@ -30,17 +42,21 @@ const Banner = () => {
 					</div>
 
 					<div className="py-8 text-center shadow-md border border-zinc-200 rounded-lg bg-white space-y-2">
-						<p className="text-teal-800 font-bold text-3xl">3</p>
+						<p className="text-teal-800 font-bold text-3xl">
+							{onTrackLength}
+						</p>
 						<p className="text-zinc-600">On Track</p>
 					</div>
 					<div className="py-8 text-center shadow-md border border-zinc-200 rounded-lg bg-white space-y-2">
-						<p className="text-teal-800 font-bold text-3xl">6</p>
+						<p className="text-teal-800 font-bold text-3xl">
+							{overdueLength}
+						</p>
 						<p className="text-zinc-600">Need Attention</p>
 					</div>
 
 					<div className="py-8 text-center shadow-md border border-zinc-200 rounded-lg bg-white space-y-2">
 						<p className="text-emerald-700 font-bold text-3xl">
-							12
+							{interactionThisMonthLength}
 						</p>
 						<p className="text-zinc-600">Interactions This Month</p>
 					</div>
