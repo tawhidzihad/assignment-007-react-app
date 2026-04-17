@@ -1,16 +1,48 @@
-# React + Vite
+# KeenKeeper | Keep Your Friendships Alive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## KeenKeeper is a modern social tracking app designed to help users maintain meaningful connections with their friends. It allows users to log interactions such as text messages, audio calls, and video calls, and visualize their communication history through a clean timeline interface. By keeping track of how often and how recently you connect with people, KeenKeeper helps ensure that no important relationship fades away over time.
 
-Currently, two official plugins are available:
+<br>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Technologies Used To Build?
 
-## React Compiler
+- JavaScript
+- React
+- Tailwind CSS
+- DaisyUI
+- React Icons
+- React Router
+- Recharts
+- React Toastify
+- Figma
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<br>
 
-## Expanding the ESLint configuration
+## 3 Key Features Of This Project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Automatically update the following information:
+    1. Total Friends
+    2. On Track
+    3. Need Attention
+    4. Interactions This Month
+
+<br>
+
+### 2. Each friend has 3 “Quick Check-In” buttons. When you click any of them, a notification will be shown, and the data will be stored on the Timeline page and Stats page.
+    1. Audio Call
+    2. Video Call
+    3. Text Message
+
+<br>
+
+### 3. The Timeline page displays your interactions and provides filtering options. The Stats page visualizes the data using charts for calls, video, and text. Initially, both pages will display an empty state message.
+    1. Filterd by Call
+    2. Filterd by Video
+    3. Filterd by Text
+    4. Filterd by New To Old
+    5. Filterd by Old To New
+
+<br>
+
+## Use KeenKeeper to keep your friendships alive.
+Visit: https://kinkeeper-psi.vercel.app/
