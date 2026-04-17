@@ -9,8 +9,9 @@
 		"tags": ["work"],
 		"bio": "Worked together at a software company. Great team player.",
 		"goal": 60,
-		"next_due_date": "2026-02-27"
+		"next_due_date": "Feb 27, 2026"
 	},
+
 	{
 		"id": 2,
 		"name": "Emma Wilson",
@@ -21,8 +22,9 @@
 		"tags": ["family"],
 		"bio": "Cousin who lives in London. Always supportive and kind.",
 		"goal": 30,
-		"next_due_date": "2026-02-10"
+		"next_due_date": "Feb 10, 2026"
 	},
+
 	{
 		"id": 3,
 		"name": "Lisa Nakamura",
@@ -33,8 +35,9 @@
 		"tags": ["work"],
 		"bio": "Collaborated on a startup project. Very creative thinker.",
 		"goal": 30,
-		"next_due_date": "2026-02-15"
+		"next_due_date": "Feb 15, 2026"
 	},
+
 	{
 		"id": 4,
 		"name": "James Wright",
@@ -45,8 +48,9 @@
 		"tags": ["hobby", "travel"],
 		"bio": "Met during a backpacking trip in Nepal. Loves adventure.",
 		"goal": 45,
-		"next_due_date": "2026-02-12"
+		"next_due_date": "Feb 15, 2026"
 	},
+
 	{
 		"id": 5,
 		"name": "Sophia Brown",
@@ -57,8 +61,9 @@
 		"tags": ["friend"],
 		"bio": "Regular gym partner. Keeps me motivated to stay fit.",
 		"goal": 30,
-		"next_due_date": "2026-03-20"
+		"next_due_date": "Mar 20, 2026"
 	},
+
 	{
 		"id": 6,
 		"name": "Liam Anderson",
@@ -69,8 +74,9 @@
 		"tags": ["work"],
 		"bio": "Team lead at current company. Very helpful mentor.",
 		"goal": 20,
-		"next_due_date": "2026-03-10"
+		"next_due_date": "Mar 10, 2026"
 	},
+
 	{
 		"id": 7,
 		"name": "Olivia Martinez",
@@ -81,8 +87,9 @@
 		"tags": ["family"],
 		"bio": "Aunt living abroad. We talk mostly during holidays.",
 		"goal": 30,
-		"next_due_date": "2026-02-28"
+		"next_due_date": "Feb 28, 2026"
 	},
+
 	{
 		"id": 8,
 		"name": "Noah Johnson",
@@ -93,8 +100,9 @@
 		"tags": ["college"],
 		"bio": "College friend from computer science department.",
 		"goal": 30,
-		"next_due_date": "2026-02-01"
+		"next_due_date": "Feb 1, 2026"
 	},
+
 	{
 		"id": 9,
 		"name": "Ava Thompson",
@@ -105,8 +113,9 @@
 		"tags": ["friend"],
 		"bio": "Neighbor and close friend. Often hang out on weekends.",
 		"goal": 25,
-		"next_due_date": "2026-03-05"
+		"next_due_date": "Mar 5, 2026"
 	},
+
 	{
 		"id": 10,
 		"name": "Ethan Clark",
@@ -117,30 +126,6 @@
 		"tags": ["work"],
 		"bio": "Client from freelance projects. Communication is important.",
 		"goal": 30,
-		"next_due_date": "2026-02-26"
-	},
-	{
-		"id": 11,
-		"name": "Mia Rodriguez",
-		"picture": "https://randomuser.me/api/portraits/women/33.jpg",
-		"email": "mia.rodriguez@example.com",
-		"days_since_contact": 65,
-		"status": "overdue",
-		"tags": ["travel"],
-		"bio": "Met during a trip to Spain. Loves photography.",
-		"goal": 40,
-		"next_due_date": "2026-02-08"
-	},
-	{
-		"id": 12,
-		"name": "Lucas Hernandez",
-		"picture": "https://randomuser.me/api/portraits/men/15.jpg",
-		"email": "lucas.hernandez@example.com",
-		"days_since_contact": 12,
-		"status": "on-track",
-		"tags": ["hobby"],
-		"bio": "Football teammate. Plays every weekend.",
-		"goal": 20,
-		"next_due_date": "2026-03-12"
+		"next_due_date": "Feb 26, 2026"
 	}
 ]
