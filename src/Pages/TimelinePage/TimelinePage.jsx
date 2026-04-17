@@ -25,7 +25,7 @@ const TimelinePage = () => {
 		if (ActionType === "New To Old") {
 			const newArray = [...filtaredData].reverse();
 			setFiltaredData(newArray);
-		}else{
+		} else {
 			const newArray = [...filtaredData].reverse();
 			setFiltaredData(newArray);
 		}
